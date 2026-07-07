@@ -68,6 +68,113 @@ Recrutadores de **data engineering** valorizam portfólio com código real no Gi
 
 ---
 
+## Briefs detalhados — projetos flagship
+
+### Projeto 11: Pipeline completo com Airflow
+
+**Objetivo:** Demonstrar orquestração end-to-end de um pipeline batch.
+
+**Escopo:**
+1. DAG que extrai dados de API pública (ex.: IBGE, Banco Central)
+2. Transforma com Pandas (limpeza, tipagem)
+3. Carrega em PostgreSQL (staging + tabela final)
+4. Envia alerta Slack em caso de falha
+5. Testes com `pytest` + validação de DAG no CI
+
+**Diferencial no portfólio:** Diagrama Mermaid, `docker-compose up` funcional, badge CI verde.
+
+---
+
+### Projeto 12: Projeto dbt com 3 camadas
+
+**Objetivo:** Demonstrar ELT moderno com testes e documentação.
+
+**Escopo:**
+1. Seed com dados de exemplo (CSV versionado)
+2. Models: `stg_*` → `int_*` → `fct_*` / `dim_*`
+3. Testes: unique, not_null, relationships
+4. `dbt docs generate` publicado (GitHub Pages ou artifact)
+5. CI com `dbt build` em DuckDB ou BigQuery sandbox
+
+**Diferencial:** Schema YAML documentado, macros reutilizáveis.
+
+---
+
+### Projeto 21: Lakehouse com Delta Lake
+
+**Objetivo:** Demonstrar arquitetura medallion em escala.
+
+**Escopo:**
+1. Ingestão de JSON/CSV para bronze (S3 ou MinIO local)
+2. Transformação silver com PySpark (limpeza, dedup)
+3. Agregação gold com métricas de negócio
+4. Particionamento por data, formato Delta/Parquet
+5. Inspecionar arquivos com [Parquet Viewer](../../tools/parquet-viewer/)
+
+**Diferencial:** Comparar tamanho Parquet vs CSV, documentar taxa de compressão.
+
+---
+
+## Template de README para projetos
+
+```markdown
+# Nome do Projeto
+
+> Uma linha descrevendo o que o pipeline faz.
+
+## Arquitetura
+
+[Mermaid diagram aqui]
+
+## Stack
+
+- Python 3.11, Apache Airflow 2.x, PostgreSQL 15, Docker
+
+## Setup
+
+\`\`\`bash
+git clone ...
+cd projeto
+docker-compose up -d
+\`\`\`
+
+## Como funciona
+
+1. DAG `pipeline_diario` roda às 6h (dias úteis)
+2. Extrai dados de [fonte]
+3. Transforma e valida qualidade
+4. Carrega em [destino]
+
+## Decisões técnicas
+
+- Por que Airflow e não Prefect?
+- Por que Parquet e não CSV?
+
+## Resultados
+
+- X registros/dia processados
+- SLA de freshness: 99%
+
+## Próximos passos
+
+- [ ] Adicionar testes Great Expectations
+- [ ] Migrar para cloud (AWS/GCP)
+```
+
+---
+
+## Como escolher a stack do projeto
+
+| Critério | Opção iniciante | Opção intermediária | Opção avançada |
+|----------|-----------------|---------------------|----------------|
+| Orquestração | cron | Airflow local | Airflow managed / MWAA |
+| Transformação | SQL puro | dbt + DuckDB | dbt + BigQuery/Snowflake |
+| Storage | PostgreSQL | MinIO + Parquet | S3 + Delta Lake |
+| Streaming | — | Kafka local (Docker) | Kafka → Spark → DW |
+| Infra | Docker Compose | Terraform básico | Terraform multi-ambiente |
+
+---
+
 ## Como apresentar no GitHub
 
 - README com diagrama de arquitetura (Mermaid)

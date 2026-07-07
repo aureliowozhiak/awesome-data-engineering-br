@@ -43,6 +43,7 @@
 - [Glossário](#-glossário)
 - [Documentação expandida](#-documentação-expandida)
 - [Biblioteca de Ebooks](#-biblioteca-de-ebooks)
+- [Ferramentas online](#-ferramentas-online)
 - [Como contribuir](#-como-contribuir)
 
 ---
@@ -594,7 +595,9 @@ Cada tecnologia abaixo inclui contexto para você entender **por que aprender**,
 | **Quando usar** | Armazenar dados processados em S3/GCS/ADLS |
 | **Importância** | ⭐⭐⭐⭐⭐ |
 
-**Links:** [Parquet Docs](https://parquet.apache.org/docs/)
+**Links:** [Parquet Docs](https://parquet.apache.org/docs/) · [Parquet Viewer (ferramenta online)](tools/parquet-viewer/)
+
+> 💡 Use o [Parquet Viewer](tools/parquet-viewer/) do hub de ferramentas para inspecionar schema, metadados e prévia de arquivos `.parquet` direto no navegador.
 
 ---
 
@@ -1238,23 +1241,23 @@ Mais de 150 termos essenciais de **engenharia de dados** e **data engineering**.
 
 ## 📂 Documentação expandida
 
-Este repositório foi estruturado para crescer. Cada pasta possui README próprio com **internal linking** para SEO:
+Este repositório foi estruturado para crescer. Cada pasta possui README próprio com **internal linking** para SEO, exemplos de código, checklists de domínio, anti-padrões e links para ferramentas online:
 
 | Pasta | Conteúdo |
 |-------|----------|
-| [`docs/sql`](docs/sql/README.md) | SQL para engenharia de dados |
-| [`docs/python`](docs/python/README.md) | Python para dados |
-| [`docs/airflow`](docs/airflow/README.md) | Orquestração com Airflow |
-| [`docs/spark`](docs/spark/README.md) | Processamento distribuído |
-| [`docs/kafka`](docs/kafka/README.md) | Streaming e eventos |
-| [`docs/dbt`](docs/dbt/README.md) | Transformação ELT |
-| [`docs/cloud`](docs/cloud/README.md) | AWS, Azure, GCP |
-| [`docs/roadmaps`](docs/roadmaps/README.md) | Trilhas de estudo |
-| [`docs/interview`](docs/interview/README.md) | Preparação para entrevistas |
-| [`docs/projects`](docs/projects/README.md) | Ideias de portfólio |
-| [`docs/books`](docs/books/README.md) | Livros por nível |
-| [`docs/newsletters`](docs/newsletters/README.md) | Newsletters curadas |
-| [`docs/resources`](docs/resources/README.md) | Git, Linux, Docker, Terraform |
+| [`docs/sql`](docs/sql/README.md) | SQL para engenharia de dados — exemplos, padrões DW, checklist |
+| [`docs/python`](docs/python/README.md) | Python para dados — estrutura ETL, exemplos, ambiente dev |
+| [`docs/airflow`](docs/airflow/README.md) | Orquestração — DAG exemplo, troubleshooting, checklist produção |
+| [`docs/spark`](docs/spark/README.md) | Processamento distribuído — PySpark, tuning, streaming |
+| [`docs/kafka`](docs/kafka/README.md) | Streaming — arquitetura, producer/consumer, particionamento |
+| [`docs/dbt`](docs/dbt/README.md) | Transformação ELT — estrutura projeto, testes, workflow |
+| [`docs/cloud`](docs/cloud/README.md) | AWS, Azure, GCP — arquiteturas, custos, sandboxes |
+| [`docs/roadmaps`](docs/roadmaps/README.md) | Trilhas de estudo — plano semanal, checkpoints, matriz de skills |
+| [`docs/interview`](docs/interview/README.md) | Preparação — respostas modelo, STAR, negociação salarial |
+| [`docs/projects`](docs/projects/README.md) | Ideias de portfólio — briefs detalhados, template README |
+| [`docs/books`](docs/books/README.md) | Livros por nível — ordem de leitura, alternativas gratuitas |
+| [`docs/newsletters`](docs/newsletters/README.md) | Newsletters curadas por nível de experiência |
+| [`docs/resources`](docs/resources/README.md) | Git, Linux, Docker, Terraform — comandos, Docker Compose, data quality |
 
 ---
 
@@ -1280,6 +1283,28 @@ A curadoria deste repositório também está disponível como **ebooks gratuitos
 | [Projetos e Portfólio](ebooks/ebooks/projetos-e-portfolio.html) | 35+ ideias de projetos |
 
 Para adicionar novos ebooks, edite `ebooks/data/catalog.json` e execute `python ebooks/scripts/generate_all.py`.
+
+---
+
+## 🛠️ Ferramentas online
+
+Além da curadoria e dos ebooks, o projeto inclui um **hub de ferramentas online para engenharia de dados** — formatadores, conversores, validadores, geradores e calculadoras que rodam **100% no seu navegador** (nenhum dado é enviado a servidores). É uma plataforma estática, *SEO-first* e *AI-search-first*, preparada para crescer para centenas de ferramentas.
+
+👉 **[Abrir o hub de ferramentas](https://dataengineer.help/tools)**
+
+| Ferramenta | O que faz |
+|-----------|-----------|
+| [SQL Formatter](https://dataengineer.help/tools/sql-formatter/) | Formata e identa queries SQL |
+| [JSON Formatter & Validator](https://dataengineer.help/tools/json-formatter/) | Formata, valida e minifica JSON |
+| [JSON para CSV](https://dataengineer.help/tools/json-to-csv/) | Converte array JSON em CSV |
+| [CSV para JSON](https://dataengineer.help/tools/csv-to-json/) | Converte CSV em array JSON |
+| [CSV Profiler](https://dataengineer.help/tools/csv-profiler/) | Perfil de qualidade de dados de um CSV |
+| [Diff de Texto e JSON](https://dataengineer.help/tools/text-diff/) | Compara duas versões e destaca diferenças |
+| [Explicador de Cron (Airflow)](https://dataengineer.help/tools/cron-expression-explainer/) | Traduz cron e mostra próximas execuções |
+| [Gerador de UUID](https://dataengineer.help/tools/uuid-generator/) | Gera UUIDs v4 em lote |
+| [Base64 Encoder / Decoder](https://dataengineer.help/tools/base64-encoder-decoder/) | Codifica/decodifica Base64 (UTF-8) |
+| [Gerador de Hash (SHA)](https://dataengineer.help/tools/hash-generator/) | Gera hashes SHA-1/256/384/512 |
+| [Parquet Viewer](https://dataengineer.help/tools/parquet-viewer/) | Inspeciona schema, metadados e prévia de arquivos Parquet |
 
 ---
 

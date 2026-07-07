@@ -105,6 +105,72 @@ Processos seletivos para **engenheiro de dados** no Brasil geralmente incluem:
 
 ---
 
+## Respostas modelo para perguntas frequentes
+
+### ETL vs ELT?
+
+> **ETL** transforma dados antes de carregar no destino — comum em pipelines legados e quando o destino não tem compute robusto. **ELT** carrega dados brutos primeiro e transforma dentro do warehouse com SQL — padrão moderno com Snowflake, BigQuery e dbt, aproveitando o poder de processamento do DW.
+
+### O que é idempotência em pipelines?
+
+> Uma operação é idempotente quando executá-la múltiplas vezes produz o mesmo resultado. Em pipelines, isso significa que reprocessar um dia inteiro não duplica dados. Implemente com `MERGE`, `INSERT OVERWRITE` por partição, ou deletes + inserts atômicos.
+
+### Batch vs streaming?
+
+> **Batch** processa dados em lotes agendados (diário, horário) — mais simples, mais barato, latência de minutos/horas. **Streaming** processa eventos conforme chegam — latência de segundos, mais complexo e caro. Use batch para relatórios e streaming quando o negócio exige dados quase em tempo real (fraude, personalização).
+
+### Medallion architecture?
+
+> Três camadas no data lake: **Bronze** (raw, dados como chegaram), **Silver** (limpos, tipados, deduplicados) e **Gold** (agregados, prontos para BI). Cada camada tem SLA e qualidade crescentes. Padrão dominante em lakehouse com Delta Lake, Iceberg ou Hudi.
+
+---
+
+## Formato STAR para perguntas comportamentais
+
+| Letra | Significado | Exemplo |
+|-------|-------------|---------|
+| **S** | Situação | "O pipeline de vendas falhava toda segunda-feira..." |
+| **T** | Tarefa | "Precisava identificar a causa e garantir SLA de 8h" |
+| **A** | Ação | "Analisei logs do Airflow, encontrei race condition no XCom, refatorei para staging em S3" |
+| **R** | Resultado | "SLA passou de 60% para 99%, e documentei o padrão para o time" |
+
+Prepare 3–5 histórias STAR cobrindo: resolução de incidente, projeto do zero, conflito técnico, aprendizado rápido de ferramenta nova.
+
+---
+
+## Take-home projects — dicas
+
+- Leia o enunciado com atenção e faça perguntas clarificadoras (por email)
+- Entregue em 48–72h, não antes (parece apressado) nem depois (sem extensão)
+- Inclua README com: setup, decisões de arquitetura, trade-offs, o que faria diferente
+- Código limpo > features extras — testes e documentação impressionam mais
+- Se usar IA, declare e explique como validou o código
+
+---
+
+## Negociação salarial no Brasil
+
+| Dica | Detalhe |
+|------|---------|
+| Pesquise antes | Glassdoor, Levels.fyi, comunidades (Data Hackers) |
+| CLT vs PJ | PJ paga 30–50% mais, mas sem benefícios |
+| Remoto internacional | Salários em USD/EUR para empresas gringas |
+| Não dê o primeiro número | Pergunte a faixa da vaga primeiro |
+| Pacote total | Considere VR, PLR, stock options, home office |
+
+---
+
+## Recursos para praticar
+
+| Tipo | Recurso |
+|------|---------|
+| SQL ao vivo | [DataLemur](https://datalemur.com/), [LeetCode Database](https://leetcode.com/problemset/database/) |
+| System design | [ByteByteGo](https://blog.bytebytego.com/), desenhe no Excalidraw |
+| Mock interviews | [Pramp](https://www.pramp.com/), colegas da comunidade |
+| Perguntas reais | [Glassdoor](https://www.glassdoor.com.br/) — busque por empresa + "data engineer" |
+
+---
+
 ## Dicas para o dia da entrevista
 
 > ✅ Pratique SQL ao vivo em [DataLemur](https://datalemur.com/) e [LeetCode Database](https://leetcode.com/problemset/database/)

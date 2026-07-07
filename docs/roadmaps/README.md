@@ -98,6 +98,80 @@ flowchart TD
 
 ---
 
+## Plano de estudo semanal (modelo)
+
+| Dia | Atividade | Duração |
+|-----|-----------|---------|
+| Segunda | Teoria + leitura de docs | 1–2h |
+| Terça | Exercícios práticos (SQL/Python) | 1–2h |
+| Quarta | Projeto hands-on | 2h |
+| Quinta | Vídeo/curso da tecnologia da fase | 1–2h |
+| Sexta | Newsletter + artigos + revisão | 1h |
+| Sábado | Projeto de portfólio (bloco longo) | 3–4h |
+| Domingo | Descanso ou leitura leve | — |
+
+**Meta realista:** 8–12 horas/semana para quem trabalha em tempo integral.
+
+---
+
+## Matriz de competências por fase
+
+| Competência | Fase 1 | Fase 2 | Fase 3 | Fase 4 | Fase 5 |
+|-------------|--------|--------|--------|--------|--------|
+| SQL avançado | ●●● | ●●●● | ●●●●● | ●●●●● | ●●●●● |
+| Python para dados | ●●● | ●●●● | ●●●●● | ●●●●● | ●●●●● |
+| Airflow | — | ●●● | ●●●● | ●●●●● | ●●●●● |
+| dbt | — | ●●● | ●●●● | ●●●●● | ●●●●● |
+| Spark | — | — | ●●● | ●●●● | ●●●●● |
+| Cloud (1 provider) | — | — | ●●● | ●●●● | ●●●●● |
+| Kafka/Streaming | — | — | — | ●●● | ●●●● |
+| System design | — | — | ● | ●● | ●●●● |
+
+---
+
+## Marcos de validação (checkpoints)
+
+### Após Fase 1
+- [ ] Resolvo 20+ exercícios SQL (joins, window functions, CTEs)
+- [ ] Escrevo script Python que lê CSV, transforma e grava em PostgreSQL
+- [ ] Tenho repositório GitHub com commits regulares
+- [ ] Subo ambiente local com Docker Compose (Postgres)
+
+### Após Fase 2
+- [ ] Pipeline Airflow rodando com pelo menos 3 tasks encadeadas
+- [ ] Projeto dbt com staging + marts e testes passando
+- [ ] Modelo dimensional (star schema) implementado em SQL
+
+### Após Fase 3
+- [ ] Job Spark processando Parquet particionado em S3 ou local
+- [ ] Recursos cloud provisionados com Terraform
+- [ ] Camadas bronze/silver/gold documentadas
+
+### Após Fase 4
+- [ ] Pipeline Kafka → consumer funcionando
+- [ ] CI/CD rodando testes de DAG ou dbt em PR
+- [ ] Monitoramento de freshness ou data quality ativo
+
+### Após Fase 5
+- [ ] 3+ projetos no GitHub com README e diagrama
+- [ ] LinkedIn atualizado com stack e projetos
+- [ ] Simulei 5+ entrevistas técnicas (SQL + system design)
+
+---
+
+## Ferramentas online do repositório
+
+Use as ferramentas do hub para acelerar o aprendizado em cada fase:
+
+| Fase | Ferramenta | Link |
+|------|-----------|------|
+| 1 — SQL | SQL Formatter | [tools/sql-formatter/](../../tools/sql-formatter/) |
+| 1 — Dados | CSV Profiler, JSON↔CSV | [tools/](../../tools/) |
+| 2 — Airflow | Explicador de Cron | [tools/cron-expression-explainer/](../../tools/cron-expression-explainer/) |
+| 3 — Spark/Lakehouse | Parquet Viewer | [tools/parquet-viewer/](../../tools/parquet-viewer/) |
+
+---
+
 ## Perfis de transição
 
 | De | Foco inicial | Tempo estimado |

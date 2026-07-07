@@ -71,6 +71,125 @@ Airflow (DAGs) → PySpark → Cloud SDKs → CI/CD
 
 ---
 
+## Estrutura de projeto Python para ETL
+
+```
+meu-pipeline/
+├── src/
+│   ├── extract/       # conectores de fonte (API, DB, arquivos)
+│   ├── transform/     # regras de negócio e limpeza
+│   ├── load/          # escrita no destino
+│   └── utils/         # logging, config, helpers
+├── tests/
+│   ├── test_extract.py
+│   └── test_transform.py
+├── dags/              # DAGs Airflow (se aplicável)
+├── config/
+│   └── settings.yaml
+├── requirements.txt   # ou pyproject.toml com Poetry
+├── Dockerfile
+└── README.md
+```
+
+---
+
+## Exemplos práticos de código
+
+### Processar arquivo grande sem estourar memória
+
+```python
+import csv
+
+def read_in_chunks(path, chunk_size=10_000):
+    with open(path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        chunk = []
+        for row in reader:
+            chunk.append(row)
+            if len(chunk) >= chunk_size:
+                yield chunk
+                chunk = []
+        if chunk:
+            yield chunk
+
+for batch in read_in_chunks("dados.csv"):
+    process(batch)  # transforma e carrega cada lote
+```
+
+### Consumir API REST com retry
+
+```python
+import httpx
+import time
+
+def fetch_with_retry(url, max_retries=3):
+    for attempt in range(max_retries):
+        try:
+            response = httpx.get(url, timeout=30)
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPError as e:
+            wait = 2 ** attempt
+            print(f"Tentativa {attempt + 1} falhou: {e}. Aguardando {wait}s...")
+            time.sleep(wait)
+    raise RuntimeError(f"Falha após {max_retries} tentativas: {url}")
+```
+
+### Teste de pipeline com pytest
+
+```python
+import pandas as pd
+from transform.clean import normalize_dates
+
+def test_normalize_dates():
+    df = pd.DataFrame({"created_at": ["2025-01-15", "invalid", None]})
+    result = normalize_dates(df, "created_at")
+    assert result["created_at"].notna().sum() == 1
+    assert str(result["created_at"].iloc[0]) == "2025-01-15"
+```
+
+---
+
+## Ambiente de desenvolvimento
+
+| Ferramenta | Uso | Comando |
+|------------|-----|---------|
+| **venv** | Ambiente virtual nativo | `python -m venv .venv && source .venv/bin/activate` |
+| **Poetry** | Gerenciamento moderno de deps | `poetry init && poetry add pandas` |
+| **pip-tools** | requirements.txt pinado | `pip-compile requirements.in` |
+| **pre-commit** | Hooks de qualidade | `pre-commit install` |
+
+---
+
+## Anti-padrões comuns
+
+- Carregar dataset inteiro com `pd.read_csv()` sem `chunksize` ou `dtype`
+- Hardcodar credenciais no código — use variáveis de ambiente ou secrets manager
+- Ignorar type hints e testes em pipelines de produção
+- Misturar lógica de negócio com código de conexão (viola SRP)
+- Não logar erros com contexto (fonte, linha, timestamp)
+
+---
+
+## Checklist de domínio Python
+
+- [ ] Uso generators/chunks para arquivos grandes
+- [ ] Escrevo testes pytest para transformações críticas
+- [ ] Consumo APIs com timeout e retry exponencial
+- [ ] Gerencio dependências com venv ou Poetry
+- [ ] Conheço Pandas/Polars para transformação em memória
+- [ ] Integro com SDKs de cloud (boto3, google-cloud)
+- [ ] Estruturo projetos ETL com separação extract/transform/load
+
+---
+
+## Ferramentas online do repositório
+
+- [JSON Formatter](../../tools/json-formatter/) · [JSON→CSV](../../tools/json-to-csv/) · [CSV→JSON](../../tools/csv-to-json/)
+- [CSV Profiler](../../tools/csv-profiler/) — validar dados antes do pipeline
+
+---
+
 ## Links relacionados
 
 - [Apache Airflow](../airflow/README.md) — orquestração com Python

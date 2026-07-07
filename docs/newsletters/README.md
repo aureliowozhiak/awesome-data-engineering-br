@@ -37,6 +37,29 @@ O ecossistema de **engenharia de dados** evolui rapidamente — novas versões d
 
 ---
 
+## Newsletters por nível de experiência
+
+| Nível | Newsletters recomendadas |
+|-------|--------------------------|
+| Iniciante | Data Engineering Weekly, Seattle Data Guy, Data Hackers |
+| Intermediário | dbt Labs Blog Digest, Analytics Engineering Roundup, ByteByteGo |
+| Avançado | OSS Data Newsletter, Gradient Flow, Datafold Newsletter |
+
+---
+
+## Ferramentas e conteúdo do repositório
+
+Além das newsletters, mantenha-se atualizado com os recursos deste repositório:
+
+| Recurso | Atualização | Link |
+|---------|-------------|------|
+| **Hub de ferramentas** | Novas ferramentas mensais | [tools/](../../tools/) |
+| **Ebooks** | 12 guias em HTML | [ebooks/](../../ebooks/) |
+| **Docs expandidos** | Curadoria contínua | [docs/](../) |
+| **GitHub** | Watch/Star para releases | [Repositório](https://github.com/aureliowozhiak/awesome-data-engineering-br) |
+
+---
+
 ## Como consumir de forma produtiva
 
 > 💡 **Dica:** Reserve 30 minutos na sexta-feira para ler newsletters. Salve artigos relevantes no Pocket ou Notion e transforme aprendizados em projetos.

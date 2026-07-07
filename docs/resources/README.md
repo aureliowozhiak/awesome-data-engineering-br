@@ -120,6 +120,97 @@ Deploy automatizado de DAGs, modelos dbt e infraestrutura.
 
 ---
 
+## Comandos Linux essenciais para DE
+
+```bash
+# Explorar arquivos de log
+grep "ERROR" /var/log/airflow/*.log | tail -20
+awk -F',' '{print $1, $3}' dados.csv | head
+jq '.results[0].name' resposta_api.json
+
+# Monitorar recursos
+htop                          # CPU e memória
+df -h                         # espaço em disco
+du -sh /data/lake/*           # tamanho por diretório
+
+# Rede e APIs
+curl -s https://api.exemplo.com/dados | jq .
+ssh usuario@servidor-airflow
+
+# Agendamento
+crontab -e                    # editar cron jobs
+crontab -l                    # listar cron jobs
+```
+
+---
+
+## Docker Compose — stack local para DE
+
+```yaml
+# docker-compose.yml — ambiente mínimo para praticar
+version: "3.8"
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: dados
+      POSTGRES_USER: de
+      POSTGRES_PASSWORD: de123
+    ports: ["5432:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+
+  minio:
+    image: minio/minio
+    command: server /data --console-address ":9001"
+    ports: ["9000:9000", "9001:9001"]
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio123
+
+volumes:
+  pgdata:
+```
+
+Suba com `docker-compose up -d` e pratique pipelines contra Postgres + MinIO (S3-compatible).
+
+---
+
+## Data Quality — ferramentas e práticas
+
+| Ferramenta | Tipo | Quando usar |
+|------------|------|-------------|
+| **dbt tests** | Declarativo (SQL) | Testes em transformações do warehouse |
+| **Great Expectations** | Programático (Python) | Validação em pipelines ETL |
+| **Soda Core** | YAML-based | Checks em data contracts |
+| **CSV Profiler** (ferramenta do repo) | Browser | Exploração rápida de CSVs |
+
+### Checks essenciais de qualidade
+
+- **Completude** — % de nulos em colunas críticas
+- **Unicidade** — chaves primárias sem duplicatas
+- **Validade** — tipos, ranges, formatos (email, CPF, data)
+- **Consistência** — mesma métrica em fontes diferentes
+- **Freshness** — dados atualizados dentro do SLA
+
+---
+
+## Ferramentas online do repositório
+
+Hub com ferramentas que rodam 100% no navegador — úteis no dia a dia do engenheiro de dados:
+
+| Ferramenta | Categoria | Link |
+|-----------|-----------|------|
+| SQL Formatter | SQL | [tools/sql-formatter/](../../tools/sql-formatter/) |
+| JSON Formatter | JSON | [tools/json-formatter/](../../tools/json-formatter/) |
+| CSV Profiler | Data Quality | [tools/csv-profiler/](../../tools/csv-profiler/) |
+| Parquet Viewer | Parquet | [tools/parquet-viewer/](../../tools/parquet-viewer/) |
+| Explicador de Cron | Airflow | [tools/cron-expression-explainer/](../../tools/cron-expression-explainer/) |
+| JSON↔CSV, UUID, Hash, Base64 | Utilitários | [tools/](../../tools/) |
+
+👉 [Hub completo de ferramentas](../../tools/index.html)
+
+---
+
 ## Cheatsheets
 
 - [PostgreSQL Cheat Sheet](https://www.postgresqltutorial.com/postgresql-cheat-sheet/)

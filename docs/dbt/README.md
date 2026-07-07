@@ -60,6 +60,115 @@
 
 ---
 
+## Estrutura de projeto dbt
+
+```
+meu_projeto_dbt/
+├── dbt_project.yml
+├── models/
+│   ├── staging/          # 1:1 com fonte, renomear e tipar
+│   │   └── stg_orders.sql
+│   ├── intermediate/     # joins e lógica reutilizável
+│   │   └── int_orders_enriched.sql
+│   └── marts/            # tabelas finais para BI
+│       └── fct_orders.sql
+├── tests/
+├── seeds/
+├── macros/
+├── snapshots/
+└── packages.yml
+```
+
+---
+
+## Exemplos de modelos e testes
+
+### Model (`models/marts/fct_orders.sql`)
+
+```sql
+{{ config(materialized='table') }}
+
+SELECT
+    o.order_id,
+    o.customer_id,
+    c.customer_name,
+    o.order_date,
+    o.total_amount
+FROM {{ ref('int_orders_enriched') }} o
+LEFT JOIN {{ ref('dim_customers') }} c USING (customer_id)
+```
+
+### Schema YAML com testes (`models/marts/schema.yml`)
+
+```yaml
+version: 2
+models:
+  - name: fct_orders
+    description: "Fato de pedidos para BI"
+    columns:
+      - name: order_id
+        tests: [unique, not_null]
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+      - name: total_amount
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+```
+
+---
+
+## Workflow de desenvolvimento
+
+```
+1. dbt run --select stg_*        # rodar staging local
+2. dbt test                      # validar testes
+3. git commit + PR               # code review
+4. CI: dbt build (em sandbox)    # validação automática
+5. merge → dbt run (prod)        # deploy em produção
+6. dbt docs generate && serve    # documentação atualizada
+```
+
+---
+
+## Pacotes dbt populares
+
+| Pacote | Uso |
+|--------|-----|
+| `dbt-labs/dbt_utils` | Macros utilitárias (surrogate_key, pivot, etc.) |
+| `calogica/dbt_expectations` | Testes avançados de qualidade |
+| `dbt-labs/codegen` | Gerar YAML/schema automaticamente |
+| `dbt-labs/audit_helper` | Comparar tabelas entre ambientes |
+
+---
+
+## Anti-padrões comuns
+
+- Modelos com 500+ linhas sem CTEs — quebre em intermediate models
+- `SELECT *` em models de produção
+- Testes apenas `not_null` sem `unique` e `relationships`
+- Não documentar colunas no `schema.yml`
+- Rodar `dbt run` em produção sem CI/CD
+
+---
+
+## Checklist de domínio dbt
+
+- [ ] Estruturo projeto em staging → intermediate → marts
+- [ ] Escrevo testes (unique, not_null, relationships) para colunas críticas
+- [ ] Uso `{{ ref() }}` e `{{ source() }}` corretamente
+- [ ] Documento modelos e colunas no schema.yml
+- [ ] Configuro materializations adequadas (view, table, incremental)
+- [ ] Integro dbt no CI/CD (GitHub Actions ou dbt Cloud)
+- [ ] Gero e publico documentação com `dbt docs`
+
+---
+
 [Snowflake](../../README.md#snowflake) · [BigQuery](../../README.md#bigquery) · [Projetos](../projects/README.md)
 
 > 💡 Os módulos **dbt – Fundamentos** e **dbt Avançado** estão previstos na trilha [DataEngineer.help](https://dataengineer.help).
