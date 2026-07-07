@@ -42,6 +42,7 @@
 - [Certificações](#-certificações)
 - [Glossário](#-glossário)
 - [Documentação expandida](#-documentação-expandida)
+- [Biblioteca de Ebooks](#-biblioteca-de-ebooks)
 - [Como contribuir](#-como-contribuir)
 
 ---
@@ -773,13 +774,13 @@ Curadoria completa em [`docs/books`](docs/books/README.md).
 
 | Canal | Foco |
 |-------|------|
-| [Brasilian Data Guys](https://www.youtube.com/@BrasilianDataGuys) | Engenharia de dados, carreira |
+| [DataEngineer.help](https://www.youtube.com/@DataEngineerHelp) | Engenharia de dados, carreira |
 | [Data Hackers](https://www.youtube.com/@DataHackers) | Comunidade, entrevistas, dados |
+| [vbluuiza](https://www.youtube.com/@vbluuiza) | Fundadora do Dados por Todos, diversidade em dados |
 | [Código Fonte TV](https://www.youtube.com/@CodigoFonteTV) | Programação incluindo Python |
 | [Filipe Deschamps](https://www.youtube.com/@FilipeDeschamps) | Tecnologia e carreira dev |
-| [Programação Dinâmica](https://www.youtube.com/@ProgramacaoDinamica) | Python, ML, dados |
+| [Programação Dinâmica](https://www.youtube.com/@pgdinamica) | Python, ML, dados |
 | [Asimov Academy](https://www.youtube.com/@AsimovAcademy) | Python e dados |
-| [TI do Bem](https://www.youtube.com/@tidobem) | Cloud e certificações |
 
 ### 🌍 Internacionais
 
@@ -1254,6 +1255,31 @@ Este repositório foi estruturado para crescer. Cada pasta possui README própri
 | [`docs/books`](docs/books/README.md) | Livros por nível |
 | [`docs/newsletters`](docs/newsletters/README.md) | Newsletters curadas |
 | [`docs/resources`](docs/resources/README.md) | Git, Linux, Docker, Terraform |
+
+---
+
+## 📖 Biblioteca de Ebooks
+
+A curadoria deste repositório também está disponível como **ebooks gratuitos em HTML** — exportáveis para PDF, otimizados para SEO e sistemas de IA.
+
+👉 **[Abrir biblioteca de ebooks](ebooks/index.html)**
+
+| Ebook | Tópico |
+|-------|--------|
+| [Fundamentos de Engenharia de Dados](ebooks/ebooks/fundamentos-data-engineering.html) | Introdução, mercado BR, carreira |
+| [Roadmap 2025](ebooks/ebooks/roadmap-engenharia-de-dados.html) | Trilha completa em 5 fases |
+| [SQL para Engenheiros de Dados](ebooks/ebooks/sql-para-engenheiros-de-dados.html) | Habilidade nº 1 |
+| [Python para Engenharia de Dados](ebooks/ebooks/python-para-engenharia-de-dados.html) | Pandas, PySpark, APIs |
+| [Apache Airflow](ebooks/ebooks/apache-airflow-guia.html) | Orquestração de pipelines |
+| [Apache Spark](ebooks/ebooks/apache-spark-guia.html) | Processamento distribuído |
+| [dbt](ebooks/ebooks/dbt-guia.html) | Transformação ELT |
+| [Apache Kafka](ebooks/ebooks/kafka-guia.html) | Streaming e eventos |
+| [Arquitetura de Dados](ebooks/ebooks/arquitetura-de-dados.html) | Modelagem, ETL/ELT |
+| [Data Lakehouse](ebooks/ebooks/data-lakehouse.html) | Medallion, Delta, Iceberg |
+| [Cloud para Dados](ebooks/ebooks/cloud-para-engenharia-de-dados.html) | AWS, Azure, GCP |
+| [Projetos e Portfólio](ebooks/ebooks/projetos-e-portfolio.html) | 35+ ideias de projetos |
+
+Para adicionar novos ebooks, edite `ebooks/data/catalog.json` e execute `python ebooks/scripts/generate_all.py`.
 
 ---
 

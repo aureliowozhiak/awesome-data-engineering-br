@@ -32,7 +32,7 @@ O ecossistema de **engenharia de dados** evolui rapidamente — novas versões d
 | Fonte | Foco |
 |-------|------|
 | [Data Hackers](https://datahackers.com.br/) | Comunidade BR, artigos e vagas |
-| [Brasilian Data Guys](https://www.youtube.com/@BrasilianDataGuys) | Também produzem conteúdo escrito |
+| [DataEngineer.help](https://www.youtube.com/@DataEngineerHelp) | Também produzem conteúdo escrito |
 | Blogs de engenharia do Nubank, iFood, QuintoAndar | Engenharia em escala no Brasil |
 
 ---
