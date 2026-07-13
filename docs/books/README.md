@@ -105,7 +105,7 @@ Para **engenheiros de dados** seniores e arquitetos de plataforma.
 
 ## Ebooks gratuitos do repositório
 
-Além dos livros pagos, este repositório oferece **12 ebooks em HTML** derivados da curadoria:
+Além dos livros pagos, este repositório oferece **23 ebooks em HTML** derivados da curadoria:
 
 | Ebook | Tópico |
 |-------|--------|

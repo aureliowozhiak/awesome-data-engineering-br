@@ -15,6 +15,7 @@ Versionamento é obrigatório para **pipelines de dados** modernos. Todo projeto
 - [Pro Git Book](https://git-scm.com/book/pt-br/v2) — gratuito em português
 - [GitHub Skills](https://skills.github.com/) — tutoriais interativos
 - [Conventional Commits](https://www.conventionalcommits.org/) — padrão de mensagens
+- **Guia completo:** [Git & GitHub para DE](../git/README.md)
 
 > 💡 O módulo **Git & GitHub para Engenheiros de Dados** está previsto na trilha [DataEngineer.help](https://dataengineer.help).
 
@@ -29,6 +30,7 @@ Servidores de **data engineering** rodam Linux. Terminal, SSH, cron e permissõe
 - [Linux Journey](https://linuxjourney.com/) — gratuito
 - Comandos essenciais: `grep`, `awk`, `sed`, `curl`, `jq`, `htop`
 - Gerenciamento de processos e systemd
+- **Guia completo:** [Linux/shell para DE](../linux/README.md)
 
 > 💡 O módulo **Shell Script: Introdução e Automação de Tarefas** na trilha [DataEngineer.help](https://dataengineer.help) cobre automação no terminal.
 
@@ -43,6 +45,7 @@ Containers padronizam ambientes de desenvolvimento e deploy de **Airflow**, **Sp
 - [Docker Docs](https://docs.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/) — stacks locais
 - Projeto: `docker-compose` com Postgres + Airflow + MinIO
+- **Guia completo:** [Docker para engenharia de dados](../docker/README.md)
 
 > 💡 O módulo **Docker e CI/CD para Dados** está previsto na trilha [DataEngineer.help](https://dataengineer.help).
 
@@ -69,6 +72,7 @@ Infraestrutura como código para **AWS**, **Azure** e **GCP**.
 - [Terraform Docs](https://developer.hashicorp.com/terraform/docs)
 - [Terraform AWS Examples](https://github.com/hashicorp/terraform-provider-aws/tree/main/examples)
 - Projeto: S3 bucket + IAM + Glue catalog
+- **Guia completo:** [Terraform IaC para dados](../terraform/README.md)
 
 > 💡 O módulo **Infra como Código (Terraform + dbt Cloud)** está previsto na trilha [DataEngineer.help](https://dataengineer.help).
 

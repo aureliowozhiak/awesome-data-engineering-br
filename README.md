@@ -1252,12 +1252,25 @@ Este repositório foi estruturado para crescer. Cada pasta possui README própri
 | [`docs/kafka`](docs/kafka/README.md) | Streaming — arquitetura, producer/consumer, particionamento |
 | [`docs/dbt`](docs/dbt/README.md) | Transformação ELT — estrutura projeto, testes, workflow |
 | [`docs/cloud`](docs/cloud/README.md) | AWS, Azure, GCP — arquiteturas, custos, sandboxes |
+| [`docs/docker`](docs/docker/README.md) | Containers e Compose para stacks de dados |
+| [`docs/git`](docs/git/README.md) | Git & GitHub para engenheiros de dados |
+| [`docs/linux`](docs/linux/README.md) | Shell, automatização e servidores Linux |
+| [`docs/terraform`](docs/terraform/README.md) | Infraestrutura como código para dados |
+| [`docs/etl`](docs/etl/README.md) | Pipelines ETL — extract, transform, load |
+| [`docs/data-modeling`](docs/data-modeling/README.md) | Modelagem dimensional, SCD, star schema |
+| [`docs/data-warehouse`](docs/data-warehouse/README.md) | Data warehouse e OLAP na nuvem |
+| [`docs/streaming`](docs/streaming/README.md) | Streaming em tempo real além do Kafka |
+| [`docs/architecture`](docs/architecture/README.md) | Padrões de arquitetura de dados |
+| [`docs/lakehouse`](docs/lakehouse/README.md) | Lakehouse medallion, Delta, Iceberg |
+| [`docs/soft-skills`](docs/soft-skills/README.md) | Soft skills para times de dados |
+| [`docs/communication`](docs/communication/README.md) | Comunicação técnica e stakeholders |
+| [`docs/english`](docs/english/README.md) | English for Data Engineers |
 | [`docs/roadmaps`](docs/roadmaps/README.md) | Trilhas de estudo — plano semanal, checkpoints, matriz de skills |
 | [`docs/interview`](docs/interview/README.md) | Preparação — respostas modelo, STAR, negociação salarial |
 | [`docs/projects`](docs/projects/README.md) | Ideias de portfólio — briefs detalhados, template README |
 | [`docs/books`](docs/books/README.md) | Livros por nível — ordem de leitura, alternativas gratuitas |
 | [`docs/newsletters`](docs/newsletters/README.md) | Newsletters curadas por nível de experiência |
-| [`docs/resources`](docs/resources/README.md) | Git, Linux, Docker, Terraform — comandos, Docker Compose, data quality |
+| [`docs/resources`](docs/resources/README.md) | Recursos complementares — comandos, Docker Compose, data quality |
 
 ---
 
@@ -1281,8 +1294,19 @@ A curadoria deste repositório também está disponível como **ebooks gratuitos
 | [Data Lakehouse](ebooks/ebooks/data-lakehouse.html) | Medallion, Delta, Iceberg |
 | [Cloud para Dados](ebooks/ebooks/cloud-para-engenharia-de-dados.html) | AWS, Azure, GCP |
 | [Projetos e Portfólio](ebooks/ebooks/projetos-e-portfolio.html) | 35+ ideias de projetos |
+| [Docker](ebooks/ebooks/docker-guia.html) | Containers e Compose para dados |
+| [Git](ebooks/ebooks/git-guia.html) | Versionamento para DE |
+| [Linux](ebooks/ebooks/linux-guia.html) | Shell e servidores |
+| [Terraform](ebooks/ebooks/terraform-guia.html) | IaC para dados |
+| [ETL e Pipelines](ebooks/ebooks/etl-pipelines.html) | Extract → Transform → Load |
+| [Data Modeling](ebooks/ebooks/data-modeling.html) | Kimball, SCD, star schema |
+| [Data Warehouse](ebooks/ebooks/data-warehouse.html) | OLAP e warehouses cloud |
+| [Streaming em Tempo Real](ebooks/ebooks/streaming-tempo-real.html) | Eventos, janelas, Flink |
+| [Soft Skills](ebooks/ebooks/soft-skills-engenharia-de-dados.html) | Ownership, feedback, time |
+| [Comunicação para Dados](ebooks/ebooks/comunicacao-para-dados.html) | RFCs, status, stakeholders |
+| [English for Data Engineers](ebooks/ebooks/english-for-data-engineers.html) | Vocabulário técnico |
 
-Para adicionar novos ebooks, edite `ebooks/data/catalog.json` e execute `python ebooks/scripts/generate_all.py`.
+Para adicionar novos ebooks, edite `ebooks/data/catalog.json` e execute `python ebooks/scripts/generate_all.py` (ebooks originais) ou `python ebooks/scripts/generate_skill_ebooks.py` (ebooks de skills).
 
 ---
 
