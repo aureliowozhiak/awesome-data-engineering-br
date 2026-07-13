@@ -165,4 +165,20 @@ Late-arriving updates > 7 dias fora da janela — documentado no README do model
 
 ---
 
+
+---
+
+## Conceitos que caem no quiz / entrevistas
+
+### Status = progresso + riscos + próximos
+Sempre com datas. Evite “em andamento” vago.
+
+### BLUF e storytelling exec
+Bottom Line Up Front: recomendação primeiro. Exec quer impacto e decisão, não stack trace.
+
+### Escuta ativa, RFC, atrasos cedo, diagramas, async daily
+RFC alinha trade-offs. Comunique slip cedo. Diagrama fonte→transform→consumo. Daily async escrito (ontem/hoje/bloqueio).
+
+---
+
 [← Voltar ao Awesome Data Engineering BR](../../README.md)

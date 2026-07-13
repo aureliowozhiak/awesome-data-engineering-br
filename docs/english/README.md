@@ -168,4 +168,32 @@ Result: Runtime dropped from 90 to 12 minutes; SLA met for 30 days straight.
 
 ---
 
+
+---
+
+## Quiz glossary extras (must-know)
+
+| Term | Meaning |
+|------|---------|
+| upstream / downstream | Producers before you / consumers after you |
+| backfill | Reprocess historical data |
+| stale data | Data older than expected freshness |
+| trade-off | Pros/cons choice |
+| on-call | Incident duty rotation |
+| runbook | Step-by-step ops procedure |
+| deprecation | Announced sunsetting of API/column/pipeline |
+| LGTM | Looks Good To Me (review approve) |
+| scope creep | Uncontrolled scope growth |
+| SLA / SLO | Agreement vs internal objective |
+| pipeline | Ingest/transform/load flow |
+| idempotent | Safe under retries |
+| stakeholder | Interested party |
+| throughput / latency | Volume/time vs delay |
+| deploy / rollback | Ship / undo release |
+| watermark / checkpoint | Incremental progress / saved state |
+| owner / handover | Accountable person / handoff |
+| incident / postmortem | Outage event / learnings write-up |
+
+---
+
 [← Back to Awesome Data Engineering BR](../../README.md)

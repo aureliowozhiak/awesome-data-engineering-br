@@ -163,4 +163,25 @@ crontab -l    # listar
 
 ---
 
+
+---
+
+## Conceitos que caem no quiz / entrevistas
+
+### grep / awk / sed / jq
+Filtram e transformam texto/JSON — dia a dia de logs de pipeline.
+
+### Processos
+- `SIGTERM` = graceful; `kill -9` = `SIGKILL` forçado (último recurso).
+- `nohup cmd &` sobrevive ao logout SSH.
+- `ps`, `top`/`htop` para CPU/memória.
+
+### systemd vs cron
+`journalctl -u serviço` lê logs. Timers systemd integram journal e dependências; cron clássico ainda aparece legado.
+
+### Disco, memória, SSH, permissões
+`df -h`, `du -sh`, `free -h`. SSH/scp/rsync para acesso e transferência. `chmod` altera rwx; `chown` altera dono.
+
+---
+
 [← Voltar ao Awesome Data Engineering BR](../../README.md)

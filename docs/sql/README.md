@@ -140,7 +140,7 @@ VALUES (123, 'Ana Silva', 'São Paulo', CURRENT_DATE, '9999-12-31', TRUE);
 | **Incremental** | Tabelas grandes com append | `WHERE updated_at > (SELECT MAX(updated_at) FROM target)` |
 | **MERGE / UPSERT** | CDC e atualizações | `MERGE INTO target USING source ON ...` |
 | **Materialized view** | Agregações frequentes | `CREATE MATERIALIZED VIEW mv_daily_sales AS ...` |
-| **Partition pruning** | Tabelas particionadas por data | `WHERE event_date BETWEEN '2025-01-01' AND '2025-01-31'` |
+| **Partition pruning** | Tabelas particionadas por data | `WHERE event_date BETWEEN '2026-01-01' AND '2026-01-31'` |
 
 ---
 
@@ -149,7 +149,7 @@ VALUES (123, 'Ana Silva', 'São Paulo', CURRENT_DATE, '9999-12-31', TRUE);
 - **`SELECT *`** em pipelines de produção — sempre liste colunas explicitamente
 - **Subqueries correlacionadas** quando window functions resolvem melhor
 - **JOIN sem filtro de partição** em tabelas particionadas por data
-- **Funções em colunas indexadas** no WHERE (`WHERE YEAR(date) = 2025` → use range)
+- **Funções em colunas indexadas** no WHERE (`WHERE YEAR(date) = 2026` → use range)
 - **CTEs materializadas desnecessárias** — em alguns engines, CTEs não são otimizadas como esperado
 
 ---

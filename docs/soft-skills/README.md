@@ -131,4 +131,23 @@ com um teste de unicidade em order_id + item_id?"
 
 ---
 
+
+---
+
+## Conceitos que caem no quiz / entrevistas
+
+### Feedback SBI e conflito
+Situação → Comportamento → Impacto. Conflito: interesses, não ego.
+
+### Mentoring, estimativa, async, dizer não
+Delegue com contexto e autonomia. Estime com buffer/range. Async remoto com escrita clara. Diga não via trade-offs explícitos.
+
+### Onboarding, blameless postmortem, STAR, ownership
+Onboarding até o 1º PR. Postmortem sem culpa. STAR = Situation/Task/Action/Result. Ownership = ponta a ponta.
+
+### Psychological safety; OKR vs KPI
+Safety = falar riscos cedo. KPI = saúde contínua; OKR = objetivos ambiciosos por ciclo.
+
+---
+
 [← Voltar ao Awesome Data Engineering BR](../../README.md)

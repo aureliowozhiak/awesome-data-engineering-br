@@ -74,7 +74,7 @@ from datetime import datetime
 
 @dag(
     schedule="0 6 * * 1-5",
-    start_date=datetime(2025, 1, 1),
+    start_date=datetime(2026, 1, 1),
     catchup=False,
     tags=["etl", "vendas"],
 )

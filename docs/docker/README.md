@@ -174,4 +174,30 @@ docker system prune -f   # limpar imagens órfãs (cuidado)
 
 ---
 
+
+---
+
+## Conceitos que caem no quiz / entrevistas
+
+### Container vs VM
+Container compartilha o **kernel** do host e isola app + deps. VM emula hardware com SO completo — mais pesada.
+
+### EXPOSE, ENTRYPOINT, CMD, COPY vs ADD
+- `EXPOSE` **documenta** a porta; não publica. Publique com `-p` ou `ports` no Compose.
+- `ENTRYPOINT` = executável base; `CMD` = args default.
+- Prefira `COPY`. `ADD` tem extras (URL, tar) — evite surpresas.
+- `.dockerignore` = `.gitignore` do contexto de build.
+
+### Multi-stage, distroless, USER non-root
+Multi-stage remove build deps da imagem final. Distroless reduz attack surface. `USER` non-root é best practice de segurança.
+
+### Volumes, Compose, healthcheck, cache, registry
+- Volume persiste além do ciclo de vida do container.
+- `docker compose up` sobe stack multi-serviço do YAML.
+- `HEALTHCHECK` marca healthy/unhealthy para orquestradores.
+- Layer caching: deps antes do código.
+- `docker pull` baixa de registry (Hub/ECR/GCR); `exec` abre shell; `prune` limpa órfãos.
+
+---
+
 [← Voltar ao Awesome Data Engineering BR](../../README.md)

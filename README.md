@@ -97,7 +97,7 @@ O dia a dia de um **engenheiro de dados** inclui:
 
 ### Faixa salarial no Brasil
 
-Valores aproximados em 2025 (CLT, mercado nacional — variam por cidade e senioridade):
+Valores aproximados em 2026 (CLT, mercado nacional — variam por cidade e senioridade):
 
 | Nível | Faixa mensal (R$) | Experiência |
 |-------|-------------------|-------------|
@@ -1283,7 +1283,7 @@ A curadoria deste repositório também está disponível como **ebooks gratuitos
 | Ebook | Tópico |
 |-------|--------|
 | [Fundamentos de Engenharia de Dados](ebooks/ebooks/fundamentos-data-engineering.html) | Introdução, mercado BR, carreira |
-| [Roadmap 2025](ebooks/ebooks/roadmap-engenharia-de-dados.html) | Trilha completa em 5 fases |
+| [Roadmap 2026](ebooks/ebooks/roadmap-engenharia-de-dados.html) | Trilha completa em 5 fases |
 | [SQL para Engenheiros de Dados](ebooks/ebooks/sql-para-engenheiros-de-dados.html) | Habilidade nº 1 |
 | [Python para Engenharia de Dados](ebooks/ebooks/python-para-engenharia-de-dados.html) | Pandas, PySpark, APIs |
 | [Apache Airflow](ebooks/ebooks/apache-airflow-guia.html) | Orquestração de pipelines |

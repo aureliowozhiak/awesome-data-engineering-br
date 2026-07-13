@@ -153,4 +153,29 @@ git push --force-with-lease
 
 ---
 
+
+---
+
+## Conceitos que caem no quiz / entrevistas
+
+### Commit, branch, PR
+Commit = snapshot + mensagem. Branch = linha paralela. PR = merge com review.
+
+### Conventional Commits
+Prefixos `feat:`, `fix:`, `docs:` — histórico legível e changelog.
+
+### Merge vs rebase; reset vs revert
+- **Merge** preserva histórico das branches.
+- **Rebase** lineariza (só use em commits locais/não compartilhados).
+- **`reset --soft`**: move HEAD mantendo stage.
+- **`revert`**: novo commit que desfaz (seguro em main). Não force-push em main.
+
+### Bisect, stash, .gitignore, conflitos
+- `bisect`: busca binária do commit quebrou.
+- `stash`: guarda WIP temporariamente.
+- `.gitignore`: nunca versionar `.env`/secrets.
+- Conflito: edite marcadores → `git add` → conclua merge/rebase.
+
+---
+
 [← Voltar ao Awesome Data Engineering BR](../../README.md)

@@ -73,7 +73,7 @@ from pyspark.sql import SparkSession
 spark = SparkSession.builder.appName("etl-vendas").getOrCreate()
 
 df = spark.read.parquet("s3://data-lake/bronze/vendas/")
-df_filtered = df.filter("event_date >= '2025-01-01'")
+df_filtered = df.filter("event_date >= '2026-01-01'")
 
 (df_filtered
  .repartition("country")

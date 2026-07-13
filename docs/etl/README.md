@@ -157,4 +157,23 @@ extract_orders >> validate_raw >> transform_silver >> publish_gold >> notify_sla
 
 ---
 
+
+---
+
+## Conceitos que caem no quiz / entrevistas
+
+### ETL vs ELT
+ETL transforma antes de carregar. ELT carrega raw e transforma no destino (dbt/SQL) — padrão cloud moderno.
+
+### Idempotência e watermark
+Reexecutar = mesmo resultado efetivo. Watermark marca progresso incremental (`updated_at`/offset).
+
+### Schema drift, dead letter, quality, orquestração
+Drift = origem muda schema. DLQ isola registros ruins. Quality checks = null/unicidade/volume. Orquestrador garante upstream → downstream.
+
+### Staging, CDC, reverse ETL
+Staging = zona intermediária. CDC captura mudanças. Reverse ETL envia dados curados de volta ao operacional (CRM etc.).
+
+---
+
 [← Voltar ao Awesome Data Engineering BR](../../README.md)

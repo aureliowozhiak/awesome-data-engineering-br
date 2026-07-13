@@ -165,4 +165,27 @@ INSERT INTO dim_customer (
 
 ---
 
+
+---
+
+## Conceitos que caem no quiz / entrevistas
+
+### Star vs snowflake; grain
+Star = fato + dims desnormalizadas. Snowflake = dims normalizadas. **Grain** = o que uma linha da fato representa.
+
+### SCD 1 / 2
+SCD1 sobrescreve. SCD2 versiona com `valid_from`/`valid_to`.
+
+### Degenerate, bridge, conformed, factless, outrigger
+- Degenerate: atributo dim na fato (nº pedido).
+- Bridge: N:N.
+- Conformed: dim compartilhada entre marts.
+- Factless: fato sem medida.
+- Outrigger: dim ligada a outra dim.
+
+### Kimball vs Inmon vs Data Vault
+Kimball = marts dimensionais bottom-up. Inmon = EDW 3NF first. Vault = hubs + links + satellites.
+
+---
+
 [← Voltar ao Awesome Data Engineering BR](../../README.md)

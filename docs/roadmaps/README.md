@@ -1,4 +1,4 @@
-# Roadmap de Engenharia de Dados — Trilha Completa 2025
+# Roadmap de Engenharia de Dados — Trilha Completa 2026
 
 > O **roadmap engenharia de dados** definitivo em português. Do zero ao profissional pronto para o mercado brasileiro de **data engineering**.
 

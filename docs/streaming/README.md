@@ -160,4 +160,23 @@ flowchart LR
 
 ---
 
+
+---
+
+## Conceitos que caem no quiz / entrevistas
+
+### Event time vs processing time; watermarks
+Event = quando ocorreu. Processing = quando processou. Watermarks fecham janelas com late data e fazem bound de estado.
+
+### Tumbling / sliding / session
+Tumbling = fixas sem overlap. Sliding = com overlap. Session = fecha após gap ocioso.
+
+### Flink, DLQ, backpressure, checkpoints
+Flink = stateful + event time. DLQ = poison messages. Backpressure = consumer lento. Checkpoints = recovery de estado.
+
+### Kappa vs Lambda
+Lambda = batch + speed. Kappa = um pipeline de stream / log único para reprocessar.
+
+---
+
 [← Voltar ao Awesome Data Engineering BR](../../README.md)

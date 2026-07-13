@@ -90,8 +90,8 @@ SELECT
   user_id,
   COUNT(*) AS events
 FROM analytics.events
-WHERE event_ts >= TIMESTAMP '2025-01-01'
-  AND event_ts <  TIMESTAMP '2025-02-01'
+WHERE event_ts >= TIMESTAMP '2026-01-01'
+  AND event_ts <  TIMESTAMP '2026-02-01'
 GROUP BY user_id;
 ```
 
@@ -148,6 +148,25 @@ GROUP BY user_id;
 4. Infra em [Cloud](../cloud/README.md) e [Terraform](../terraform/README.md)
 
 > 💡 A trilha [DataEngineer.help](https://dataengineer.help) aprofunda SQL analítico e warehouses modernos na prática.
+
+---
+
+
+---
+
+## Conceitos que caem no quiz / entrevistas
+
+### OLAP vs OLTP
+OLAP = analytics. OLTP = transações. DW serve OLAP.
+
+### Fato/dim, junk, role-playing, semi-aditivo
+Junk empacota flags. Role-playing = mesma dim em papéis (order_date/ship_date). Semi-aditivo (saldo) não soma em todas as dims (ex.: tempo).
+
+### Mart vs EDW; distribution/sort
+Mart = fatia; EDW = enterprise. No Redshift: dist key espalha; sort key ordena para I/O.
+
+### BigQuery / Snowflake / Redshift
+BQ serverless + slots. Snowflake virtual warehouses. Redshift columnar AWS com dist/sort.
 
 ---
 

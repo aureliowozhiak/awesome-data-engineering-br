@@ -142,10 +142,10 @@ import pandas as pd
 from transform.clean import normalize_dates
 
 def test_normalize_dates():
-    df = pd.DataFrame({"created_at": ["2025-01-15", "invalid", None]})
+    df = pd.DataFrame({"created_at": ["2026-01-15", "invalid", None]})
     result = normalize_dates(df, "created_at")
     assert result["created_at"].notna().sum() == 1
-    assert str(result["created_at"].iloc[0]) == "2025-01-15"
+    assert str(result["created_at"].iloc[0]) == "2026-01-15"
 ```
 
 ---

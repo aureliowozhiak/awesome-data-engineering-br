@@ -187,4 +187,26 @@ terraform state list
 
 ---
 
+
+---
+
+## Conceitos que caem no quiz / entrevistas
+
+### plan / apply / destroy / drift
+`plan` = dry-run; `apply` = muda cloud; `destroy` = remove. **Drift** = realidade diverge do código/state.
+
+### Provider, modules, tfvars
+Provider fala com a API cloud. Modules reutilizam blocos. tfvars separam valores por ambiente.
+
+### Remote state + lock
+S3 + DynamoDB (ou Terraform Cloud) evitam apply concorrente corrompendo state.
+
+### count vs for_each; data vs resource; import; lifecycle
+- `for_each` keyed (estável); `count` por índice.
+- `resource` cria; `data` só lê.
+- `import` (bloco TF 1.5+) adota recurso existente.
+- `lifecycle { prevent_destroy = true }` bloqueia destroy acidental.
+
+---
+
 [← Voltar ao Awesome Data Engineering BR](../../README.md)
