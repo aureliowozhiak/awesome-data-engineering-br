@@ -869,6 +869,7 @@ Repositórios que todo **engenheiro de dados** deveria conhecer.
 - [duckdb/duckdb](https://github.com/duckdb/duckdb)
 - [delta-io/delta](https://github.com/delta-io/delta)
 - [apache/iceberg](https://github.com/apache/iceberg)
+- [datazip-inc/olake](https://github.com/datazip-inc/olake)
 
 ### Projetos para aprender
 - [DataExpert-io/data-engineer-handbook](https://github.com/DataExpert-io/data-engineer-handbook)
