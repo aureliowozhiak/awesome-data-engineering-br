@@ -926,6 +926,7 @@ Preparação completa em [`docs/interview`](docs/interview/README.md).
 - Window functions: ROW_NUMBER vs RANK
 - Otimize query com full table scan
 - Implemente running total e moving average
+- Para praticar SQL com correção automática antes da entrevista: [curso de SQL do The Work Gym](https://theworkgym.com/pt-br/sql/), exercícios que rodam no navegador; a primeira unidade é grátis.
 
 ### Python (amostra)
 - Generators vs lists para arquivos grandes
